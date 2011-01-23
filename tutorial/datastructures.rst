@@ -1,85 +1,73 @@
 .. _tut-structures:
 
 ***************
-Data Structures
+Өгөгдлийн Бүтэц
 ***************
 
-This chapter describes some things you've learned about already in more detail,
-and adds some new things as well.
+Энэ бүлэгт таны аль хэдийн сурчихсан зарим зүйлcийг бага зэрэг дэлгэрэнгүй тайлбарлана, мөн цөөнгүй шинэ зүйлсийг ч өгөх болно.
 
 
 .. _tut-morelists:
 
-More on Lists
-=============
+Жагсаалтын тухай дэлгэрэнгүй
+============================
 
-The list data type has some more methods.  Here are all of the methods of list
-objects:
+Жагсаалт өгөгдлийн төрөл нь цөөнгүй аргачлалуудыг өөртөө багтаадаг. Доор жагсаалтын тэдгээр аргачлалуудыг сийрүүлэе:
 
 
 .. method:: list.append(x)
    :noindex:
 
-   Add an item to the end of the list; equivalent to ``a[len(a):] = [x]``.
+   Жагсаалтын төгсгөлд нэгж нэмэх; ``a[len(a):] = [x]`` гэсэнтэй ижил.
 
 
 .. method:: list.extend(L)
    :noindex:
 
-   Extend the list by appending all the items in the given list; equivalent to
-   ``a[len(a):] = L``.
+   Жагсаалтын төгсгөлд жагсаалт нэмэх; ``a[len(a):] = L`` гэсэнтэй ижил.
 
 
 .. method:: list.insert(i, x)
    :noindex:
 
-   Insert an item at a given position.  The first argument is the index of the
-   element before which to insert, so ``a.insert(0, x)`` inserts at the front of
-   the list, and ``a.insert(len(a), x)`` is equivalent to ``a.append(x)``.
+   Өгөгдсөн дугаарын байршилд нэгж нэмэх. Эхний параметр нь хэд дэх нэгжийн өмнө оруулах гэж байгаа дугаар, ``a.insert(0, x)`` гэвэл жагсаалтын эхэнд оруулна, ``a.insert(len(a), x)`` гэвэл ``a.append(x)`` гэсэнтэй ижил.
 
 
 .. method:: list.remove(x)
    :noindex:
 
-   Remove the first item from the list whose value is *x*. It is an error if there
-   is no such item.
+   Жагсаалтаас хамгийн эхний *x* утгатай нэгжийг устгана. Хэрвээ байхгүй бол алдаа өгнө.
 
 
 .. method:: list.pop([i])
    :noindex:
 
-   Remove the item at the given position in the list, and return it.  If no index
-   is specified, ``a.pop()`` removes and returns the last item in the list.  (The
-   square brackets around the *i* in the method signature denote that the parameter
-   is optional, not that you should type square brackets at that position.  You
-   will see this notation frequently in the Python Library Reference.)
+   Жагсаалтаас өгөгдсөн дугаарын байршил дахь нэгжийг устгаад утгыг нь буцаана. Хэрвээ байршил заах параметер өгөгдөөгүй буюу ``a.pop()`` байвал хамгийн сүүлийн нэгжийг устгаад утгыг нь буцаана. (*i*-ийн хоёр талд байгаа дөрвөлжин хаалт бол *i* заавал байх албагүй гэсэн тэмдэг, гэхдээ дөрвөлжин хаалтыг бичихгүй. Та энэ хүү тэмдэглэгээг Пайтон Сангийн Лавлахаас цөөнгүй удаа харах болно)
 
 
 .. method:: list.index(x)
    :noindex:
 
-   Return the index in the list of the first item whose value is *x*. It is an
-   error if there is no such item.
+   Жагсаалтаас хамгийн эхний *x* утгатай нэгжийн байршлын дугаарыг буцаана. Хэрвээ байхгүй бол алдаа өгнө.
 
 
 .. method:: list.count(x)
    :noindex:
 
-   Return the number of times *x* appears in the list.
-
+   Жагсаалт дотор *x* утгатай нэгж хэдэн удаа орсон тоог буцаана.
 
 .. method:: list.sort()
    :noindex:
 
-   Sort the items of the list, in place.
+   Жагсаалтын нэгжүүдийг утгаар нь эрэмблэн байршлыг нь солино.
 
 
 .. method:: list.reverse()
    :noindex:
 
-   Reverse the elements of the list, in place.
+   Жагсаалтын бүх нэгжүүдийг хөмрөн, урвуугаар байршлыг солино.
 
-An example that uses most of the list methods::
+Жагсаалтын дээрх аргуудыг хэрэглэх жишээ::
 
    >>> a = [66.25, 333, 333, 1, 1234.5]
    >>> print a.count(333), a.count(66.25), a.count('x')
@@ -103,8 +91,8 @@ An example that uses most of the list methods::
 
 .. _tut-lists-as-stacks:
 
-Using Lists as Stacks
----------------------
+Жагсаалтыг ашигласан Стэк
+-------------------------
 
 .. sectionauthor:: Ka-Ping Yee <ping@lfw.org>
 
